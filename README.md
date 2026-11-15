@@ -1,27 +1,17 @@
-﻿# Personal Portfolio Website
+# Rony — Personal Portfolio
 
-A responsive personal portfolio website built with HTML, CSS and JavaScript.
+A responsive white-and-blue personal portfolio for MD Imram Ahmed Rony.
 
-![Home page](screenshots/home.png)
+## Files
+- `index.html` — page content and project cards
+- `style.css` — responsive white-and-blue design
+- `script.js` — mobile navigation, project filters and reveal animations
+- `assets/rony-profile.jpg` — profile photo
 
-## Features
+## Publish with GitHub Pages
+1. Keep these files in the root of the `personal-portfolio` repository.
+2. Commit and push to the branch configured for GitHub Pages (usually `main`).
+3. Wait for GitHub Pages to deploy, then open the live portfolio.
 
-- Responsive layout with a mobile menu
-- Smooth scrolling navigation
-- Scroll reveal animations
-- Sections for About, Skills, Projects and Contact
-
-## Technologies Used
-
-- HTML5
-- CSS3 (Flexbox, Grid, media queries)
-- JavaScript (DOM, IntersectionObserver)
-
-## How to Run
-
-1. Clone the repository
-2. Open index.html in any web browser
-
-## Author
-
-Rony - https://github.com/Rony60031
+## Notes
+The site preserves the existing email and GitHub contact links. Project cards link to the corresponding GitHub repositories.

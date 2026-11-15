@@ -4,37 +4,19 @@ const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 
 menuBtn.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
+  navLinks.classList.toggle("open");
 });
 
 navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-    filterButtons.forEach((item) => item.classList.toggle("active", item === button));
-    projectCards.forEach((card) => {
-      card.hidden = filter !== "all" && card.dataset.category !== filter;
-    });
-  });
-});
-
-const revealObserver = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
